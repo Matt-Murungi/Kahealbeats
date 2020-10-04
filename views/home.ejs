@@ -1,23 +1,29 @@
 <%-include('includes/head'); %> <%-include('includes/carousel'); %>
 
-<h1 class="heading">Music</h1>
+<h1 class="heading">THE CREATION</h1>
 
 
+  <div class="music-display ">
+      <% if (musicVideos.length) { %>
+        <div class=" row">
+    <% for (let musicVideo of musicVideos ) { %>
+        <div class=" col s6 m6 l4">
 
-<!-- <div class="row">
-    <% for (musicVideo in musicVideos){ %>
-  <div class="col s12 m6 l3">
-    <div class="video-container">
-      <iframe
-        width="853"
-        height="480"
-        src=""
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-    </div>
+            <div class="music">
+        <div class=" video-container">
+            <iframe class="music-video" width="853" height="480" src="<%=musicVideo.link %>" frameborder="0" allowfullscreen></iframe>
+          </div>
+        
+          <p class="music-text center-align"><%= musicVideo.name %></p>
+        </div>
+          </div>
+            <% } %>
+
+</div>
+      <% } else { %>
+        <div>Nothing</div>
+        <% } %>
+
   </div>
-  <% } %>
-</div> -->
-
+  
 <%-include('includes/footer'); %>
