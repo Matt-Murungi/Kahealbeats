@@ -9,6 +9,8 @@ const musicRoute = require("./routes/music");
 const aboutRoute = require("./routes/about");
 const homeRoute = require("./routes/home");
 
+app.use(express.static(__dirname + '/public'));
+
 app.use("/", homeRoute);
 app.use("/about", aboutRoute);
 app.use("/music", musicRoute);
